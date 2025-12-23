@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/utils/app_colors.dart';
 import 'package:islami/core/utils/app_routes.dart';
+import 'package:islami/core/utils/device_dimensions.dart';
 import 'package:islami/introduction/widgets/screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -22,64 +23,59 @@ class _IntroScreenState extends State<IntroScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
-      body: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 16,
-            child: Image.asset(AppAssets.islamiIntroLogo),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 14),
-            child: PageView(
-              controller: pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  currentIndex = index;
-                  if (index == 4) {
-                    rightButtonText = "Finish";
-                  } else {
-                    rightButtonText = "Next";
-                  }
-                });
-              },
-              children: [
-                Screen(
-                  imgPath: AppAssets.marhbaLogo,
-                  title: "Welcome To Islmi App",
-                ),
-                Screen(
-                  imgPath: AppAssets.kabbaLogo,
-                  title: "Welcome To Islmi App",
-                  body: "We Are Very Excited To Have You In Our Community",
-                ),
-                Screen(
-                  imgPath: AppAssets.moshefLogo,
-                  title: "Reading the Quran",
-                  body: "Read, and your Lord is the Most Generous",
-                ),
-                Screen(
-                  imgPath: AppAssets.doaaLogo,
-                  title: "Bearish",
-                  body: "Praise the name of your Lord, the Most High",
-                ),
-                Screen(
-                  imgPath: AppAssets.MicrophoneLogo,
-                  title: "Holy Quran Radio",
-                  body:
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.width * 0.04,
+              vertical: context.height * 0.018),
+          child: Column(
+            children: [
+              Image.asset(
+                AppAssets.islamiIntroLogo, height: context.height * 0.2,),
+              SizedBox(height: context.height * 0.05,),
+              Expanded(
+                child: PageView(
+                  controller: pageController,
+                  onPageChanged: (index) {
+                    setState(() {
+                      currentIndex = index;
+                      if (index == 4) {
+                        rightButtonText = "Finish";
+                      } else {
+                        rightButtonText = "Next";
+                      }
+                    });
+                  },
+                  children: [
+                    Screen(
+                      imgPath: AppAssets.marhbaLogo,
+                      title: "Welcome To Islmi App",
+                    ),
+                    Screen(
+                      imgPath: AppAssets.kabbaLogo,
+                      title: "Welcome To Islmi App",
+                      body: "We Are Very Excited To Have You In Our Community",
+                    ),
+                    Screen(
+                      imgPath: AppAssets.moshefLogo,
+                      title: "Reading the Quran",
+                      body: "Read, and your Lord is the Most Generous",
+                    ),
+                    Screen(
+                      imgPath: AppAssets.doaaLogo,
+                      title: "Bearish",
+                      body: "Praise the name of your Lord, the Most High",
+                    ),
+                    Screen(
+                      imgPath: AppAssets.MicrophoneLogo,
+                      title: "Holy Quran Radio",
+                      body:
                       "You can listen to the Holy Quran Radio through the application for free and easily",
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 16,
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
+              ),
+              SizedBox(height: context.height * 0.048,),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   currentIndex == 0
@@ -136,9 +132,9 @@ class _IntroScreenState extends State<IntroScreen> {
                   ),
                 ],
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
