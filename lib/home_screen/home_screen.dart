@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/utils/app_assets.dart';
 import 'package:islami/core/utils/app_colors.dart';
+import 'package:islami/core/utils/device_dimensions.dart';
 import 'package:islami/home_screen/tabs/hadeth_tab/hadeth_tab.dart';
 import 'package:islami/home_screen/tabs/quran_tab/quran_tab.dart';
 import 'package:islami/home_screen/tabs/radio_tab/radio_tab.dart';
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     TimerTab(),
   ];
 
+// 430 x 862
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -88,12 +90,17 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Image.asset(AppAssets.islamiIntroLogo),
-              Expanded(child: tabs[selectedIndex]),
-            ],
+          body: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(
+                  AppAssets.islamiIntroLogo,
+                  height: context.height * 0.2,
+                ),
+                Expanded(child: tabs[selectedIndex]),
+              ],
+            ),
           ),
         ),
       ],
