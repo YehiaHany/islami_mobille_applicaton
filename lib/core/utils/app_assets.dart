@@ -19,4 +19,7 @@ class AppAssets {
   static const radioBackground = "$_baseUrl/radio_Background.png";
   static const timerBackground = "$_baseUrl/timer_Background.png";
   static const splashScreen = "$_baseUrl/Splash Screen.png";
+  static const vectorIcon = "$_baseUrl/Vector.svg";
+  static const quranSearchIcon = "$_baseUrl/quran_search_icon.svg";
+  static const mostRecentlyBg = "$_baseUrl/img_most_recent.png";
 }
