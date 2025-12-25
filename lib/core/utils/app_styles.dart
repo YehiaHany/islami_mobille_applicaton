@@ -15,8 +15,20 @@ class AppStyles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+  static const yellow20Bold = TextStyle(
+    color: AppColors.yellowColor,
+    fontFamily: "Janna",
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
   static const black24Bold = TextStyle(
     color: AppColors.blackColor,
+    fontFamily: "Janna",
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  );
+  static const yellow24Bold = TextStyle(
+    color: AppColors.yellowColor,
     fontFamily: "Janna",
     fontSize: 24,
     fontWeight: FontWeight.bold,
