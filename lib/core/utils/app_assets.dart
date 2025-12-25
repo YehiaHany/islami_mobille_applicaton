@@ -22,4 +22,7 @@ class AppAssets {
   static const vectorIcon = "$_baseUrl/Vector.svg";
   static const quranSearchIcon = "$_baseUrl/quran_search_icon.svg";
   static const mostRecentlyBg = "$_baseUrl/img_most_recent.png";
+  static const rightYellowCorner = "$_baseUrl/img_right_corner.png";
+  static const leftYellowCorner = "$_baseUrl/img_left_corner.png";
+  static const imgBottomDecoration = "$_baseUrl/img_bottom_decoration.png";
 }

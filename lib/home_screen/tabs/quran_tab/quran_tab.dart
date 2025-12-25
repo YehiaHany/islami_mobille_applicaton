@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/core/utils/app_routes.dart';
 import 'package:islami/core/utils/app_styles.dart';
 import 'package:islami/core/utils/device_dimensions.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/most_recently_container.dart';
@@ -36,7 +37,17 @@ class QuranTab extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(child: SuraListTile(index: index));
+                return GestureDetector(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.suraDetailsScreen,
+                        arguments: index,
+                      );
+                    },
+                    child: SuraListTile(index: index),
+                  ),
+                );
               },
               separatorBuilder: (BuildContext context, int index) {
                 return Padding(
