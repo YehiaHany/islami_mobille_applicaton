@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:islami/core/utils/device_dimensions.dart';
 
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -22,10 +21,8 @@ class SearchTextField extends StatelessWidget {
         //   minWidth: context.width * 0.06,
         // ),
         prefixIcon: Container(
-          margin: EdgeInsets.symmetric(horizontal: context.width * 0.039),
-          width: context.width * 0.06,
-          // height: context.height * 0.03,
-          child: SvgPicture.asset(AppAssets.quranSearchIcon, height: 1),
+          margin: EdgeInsets.only(left: 16, right: 12),
+          child: SvgPicture.asset(AppAssets.quranSearchIcon,),
         ),
         enabledBorder: textFieldOutlineInputBorderStyle(),
         focusedBorder: textFieldOutlineInputBorderStyle(),
