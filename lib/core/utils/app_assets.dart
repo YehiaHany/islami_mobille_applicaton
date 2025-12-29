@@ -25,4 +25,8 @@ class AppAssets {
   static const rightYellowCorner = "$_baseUrl/img_right_corner.png";
   static const leftYellowCorner = "$_baseUrl/img_left_corner.png";
   static const imgBottomDecoration = "$_baseUrl/img_bottom_decoration.png";
+  static const detailsFullBackgroundImage =
+      "$_baseUrl/details_full_background_image.png";
+  static const detailsFullBackgroundBottomImage =
+      "$_baseUrl/details_background_bottom.png";
 }

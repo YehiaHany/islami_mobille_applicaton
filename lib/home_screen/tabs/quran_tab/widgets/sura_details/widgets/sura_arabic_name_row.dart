@@ -16,7 +16,7 @@ class SuraArabicNameRow extends StatelessWidget {
       padding: EdgeInsets.only(
         left: context.width * 0.02,
         right: context.width * 0.02,
-        top: context.height * 0.015,
+        top: context.height * 0.018,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
