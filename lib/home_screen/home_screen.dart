@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: double.infinity,
           height: double.infinity,
-          child: Image.asset(getBackgroundImage(), fit: BoxFit.fill),
+          child: Image.asset(getBackgroundImage(), fit: BoxFit.cover),
         ),
         // Positioned(
         //     left: 0,
