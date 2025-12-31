@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/core/utils/app_routes.dart';
 import 'package:islami/core/utils/app_styles.dart';
 import 'package:islami/core/utils/device_dimensions.dart';
 import 'package:islami/home_screen/tabs/hadeth_tab/widgets/title_row.dart';
+import 'package:islami/models/haddeth_details_args.dart';
 import 'package:islami/models/hadeeth.dart';
 
 import '../../../../core/utils/app_assets.dart';
@@ -58,7 +60,10 @@ class _HadeethContainerState extends State<HadeethContainer> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        print("here");
+                        Navigator.of(context).pushNamed(
+                            AppRoutes.hadeethDetailsScreen,
+                            arguments: HadeethDetailsArgs(
+                                hadeeth: hadeeth!, index: widget.index));
                       },
                       child: SingleChildScrollView(
                         padding: EdgeInsets.symmetric(
