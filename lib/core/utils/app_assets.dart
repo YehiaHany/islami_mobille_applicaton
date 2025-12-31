@@ -29,4 +29,8 @@ class AppAssets {
       "$_baseUrl/details_full_background_image.png";
   static const detailsFullBackgroundBottomImage =
       "$_baseUrl/details_background_bottom.png";
+  static const hadethContainerBackgroundImage =
+      "$_baseUrl/hadeth_background_image.png";
+  static const rightBlackCorner = "$_baseUrl/right_corner.png";
+  static const leftBlackCorner = "$_baseUrl/left_corner.png";
 }

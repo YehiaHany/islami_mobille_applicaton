@@ -112,7 +112,9 @@ class _IntroScreenState extends State<IntroScreen> {
                   GestureDetector(
                     onTap: () {
                       if (currentIndex == 4) {
-                        Navigator.of(context).pushNamed(AppRoutes.homeScreen);
+                        Navigator.of(
+                          context,
+                        ).pushReplacementNamed(AppRoutes.homeScreen);
                       } else {
                         pageController.nextPage(
                           duration: Duration(milliseconds: 400),
