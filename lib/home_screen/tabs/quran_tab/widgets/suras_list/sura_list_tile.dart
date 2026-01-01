@@ -32,7 +32,7 @@ class SuraListTile extends StatelessWidget {
           ),
         ),
         Text(
-          "${QuranNameVerses.arabicAuranSuraslist[index]}",
+          "${QuranNameVerses.arabicQuranSuraslist[index]}",
           style: AppStyles.white20Bold,
         ),
       ],

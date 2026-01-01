@@ -5,21 +5,33 @@ import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
+typedef searchFunction = void Function(String);
+
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+  searchFunction func;
+  TextEditingController textEditingController;
+
+  SearchTextField({
+    super.key,
+    required this.func,
+    required this.textEditingController,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textEditingController,
+      onTapOutside: (PointerDownEvent event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      onChanged: (value) {
+        func(value);
+      },
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.blackColor.withOpacity(0.7),
         hintText: "Sura Name",
         hintStyle: AppStyles.white16Bold,
-        // prefixIconConstraints: BoxConstraints(
-        //   minHeight: context.height * 0.03,
-        //   minWidth: context.width * 0.06,
-        // ),
         prefixIcon: Container(
           margin: EdgeInsets.only(left: 16, right: 12),
           child: SvgPicture.asset(AppAssets.quranSearchIcon,),
