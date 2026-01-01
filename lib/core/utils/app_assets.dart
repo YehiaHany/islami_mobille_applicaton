@@ -33,4 +33,7 @@ class AppAssets {
       "$_baseUrl/hadeth_background_image.png";
   static const rightBlackCorner = "$_baseUrl/right_corner.png";
   static const leftBlackCorner = "$_baseUrl/left_corner.png";
+  static const sebhaImage = "$_baseUrl/Sebha.png";
+  static const sebhaBodyImage = "$_baseUrl/SebhaBody 1.png";
+  static const sebhaHeadImage = "$_baseUrl/sebha_head.png";
 }
