@@ -23,7 +23,7 @@ class SuraArabicNameRow extends StatelessWidget {
         children: [
           Image.asset(AppAssets.leftYellowCorner),
           Text(
-            QuranNameVerses.arabicAuranSuraslist[index],
+            QuranNameVerses.arabicQuranSuraslist[index],
             style: AppStyles.yellow24Bold,
           ),
           Image.asset(AppAssets.rightYellowCorner),

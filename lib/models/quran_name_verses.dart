@@ -1,5 +1,5 @@
 class QuranNameVerses {
-  static const List<String> arabicAuranSuraslist = [
+  static const List<String> arabicQuranSuraslist = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
