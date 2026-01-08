@@ -43,3 +43,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/assets/images/Sebha.png
+/assets/images/2.0x/Sebha@2x.png
+/assets/images/3.0x/Sebha@3x.png
