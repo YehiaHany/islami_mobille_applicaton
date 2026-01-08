@@ -41,6 +41,8 @@ dependencies:
   flutter_svg: ^2.2.2
   custom_sliding_segmented_control: ^1.8.5
   carousel_slider: ^5.1.1
+  slide_switcher: ^1.1.2
+
 
 dev_dependencies:
   flutter_test:

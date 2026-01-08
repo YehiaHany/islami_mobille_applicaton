@@ -36,4 +36,10 @@ class AppAssets {
   static const sebhaImage = "$_baseUrl/Sebha.png";
   static const sebhaBodyImage = "$_baseUrl/SebhaBody 1.png";
   static const sebhaHeadImage = "$_baseUrl/sebha_head.png";
+  static const radioItemMosque = "$_baseUrl/radio_item_mosque.png";
+  static const volumeIcon = "$_baseUrl/volume.svg";
+  static const muteIcon = "$_baseUrl/mute.svg";
+  static const pauseIcon = "$_baseUrl/pause.svg";
+  static const playIcon = "$_baseUrl/play.svg";
+  static const soundWaveIcon = "$_baseUrl/sound_wave.svg";
 }
