@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami/core/utils/app_routes.dart';
 import 'package:islami/core/utils/app_styles.dart';
 import 'package:islami/core/utils/device_dimensions.dart';
-import 'package:islami/home_screen/tabs/quran_tab/widgets/most_recently_container.dart';
+import 'package:islami/home_screen/tabs/quran_tab/utils.dart';
+import 'package:islami/home_screen/tabs/quran_tab/widgets/most_recently_widget.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/search_text_field.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/suras_list/sura_list_tile.dart';
 import 'package:islami/models/quran_name_verses.dart';
@@ -18,6 +19,7 @@ class _QuranTabState extends State<QuranTab> {
   int filterSearchLength = 114;
   List<int> filterList = List.generate(114, (index) => index);
   final ScrollController _scrollController = ScrollController();
+  final ScrollController mostRecentlyScrollController = ScrollController();
   final TextEditingController _textEditingController = TextEditingController();
 
   @override
@@ -25,6 +27,7 @@ class _QuranTabState extends State<QuranTab> {
     // TODO: implement dispose
     _scrollController.dispose();
     _textEditingController.dispose();
+    mostRecentlyScrollController.dispose();
     super.dispose();
   }
   @override
@@ -37,24 +40,8 @@ class _QuranTabState extends State<QuranTab> {
         children: [
           SearchTextField(
             func: search, textEditingController: _textEditingController,),
-          filterSearchLength != 114
-              ? SizedBox()
-              : Text("Most Recently", style: AppStyles.white16Bold),
-          filterSearchLength != 114
-              ? SizedBox()
-              : SizedBox(
-            height: context.height * 0.17,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (BuildContext context, int index) {
-                return MostRecentlyContainer();
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(width: context.width * 0.024);
-              },
-              itemCount: 2,
-            ),
-          ),
+          MostRecentlyWidget(filterSearchLength: filterSearchLength,
+            scrollController: mostRecentlyScrollController,),
           Text("Suras List", style: AppStyles.white16Bold),
           Expanded(
             child:
@@ -75,7 +62,14 @@ class _QuranTabState extends State<QuranTab> {
                         AppRoutes.suraDetailsScreen,
                         arguments: filterList[index],
                       );
-                      Future.delayed(Duration(milliseconds: 100), resetSearch);
+                      setMostRecently(filterList[index]);
+
+                      Future.delayed(Duration(milliseconds: 100), () {
+                        resetSearch;
+                        if (mostRecentlyScrollController.hasClients) {
+                          mostRecentlyScrollController.jumpTo(0);
+                        }
+                      },);
                     },
                     child: SuraListTile(index: filterList[index]),
                   ),

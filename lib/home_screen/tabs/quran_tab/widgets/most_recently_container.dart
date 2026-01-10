@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/utils/device_dimensions.dart';
+import 'package:islami/models/quran_name_verses.dart';
 
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
 class MostRecentlyContainer extends StatelessWidget {
-  const MostRecentlyContainer({super.key});
+  int index;
+
+  MostRecentlyContainer({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +30,12 @@ class MostRecentlyContainer extends StatelessWidget {
               spacing: context.height * 0.009,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Al-Anbia", style: AppStyles.black24Bold),
-                Text("الانبياء", style: AppStyles.black24Bold),
-                Text("112 Verses", style: AppStyles.black14Bold),
+                Text(QuranNameVerses.englishQuranSurahsList[index],
+                    style: AppStyles.black24Bold),
+                Text(QuranNameVerses.arabicQuranSuraslist[index],
+                    style: AppStyles.black24Bold),
+                Text("${QuranNameVerses.versesNumber[index]} Verses",
+                    style: AppStyles.black14Bold),
               ],
             ),
           ),

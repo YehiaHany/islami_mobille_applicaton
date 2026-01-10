@@ -5,9 +5,16 @@ import 'package:islami/home_screen/home_screen.dart';
 import 'package:islami/home_screen/tabs/hadeth_tab/widgets/hadeeth_details/HadeethDetails.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/sura_details/sura_details.dart';
 import 'package:islami/introduction/intro_screen.dart';
+import 'package:islami/providers/most_recently_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (BuildContext context) => MostRecentlyProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
