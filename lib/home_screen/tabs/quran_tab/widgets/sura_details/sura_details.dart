@@ -5,6 +5,8 @@ import 'package:islami/core/utils/device_dimensions.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/sura_details/widgets/aya_list_layout.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/sura_details/widgets/mushaf_layout.dart';
 import 'package:islami/home_screen/tabs/quran_tab/widgets/sura_details/widgets/sura_arabic_name_row.dart';
+import 'package:islami/providers/most_recently_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -22,9 +24,11 @@ class _SuraDetailsState extends State<SuraDetails> {
   List<String> ayaList = [];
   String suraContent = '';
   int selectedTabIndex = 1;
+  late MostRecentlyProvider mostRecentlyProvider;
 
   @override
   Widget build(BuildContext context) {
+    mostRecentlyProvider = Provider.of<MostRecentlyProvider>(context);
     int index = ModalRoute.of(context)?.settings.arguments as int;
     if (ayaList.isEmpty && selectedTabIndex == 1) {
       getAyaList(index);
@@ -118,5 +122,12 @@ class _SuraDetailsState extends State<SuraDetails> {
     setState(() {
       selectedTabIndex = index;
     });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    mostRecentlyProvider.getMostRecently();
   }
 }
