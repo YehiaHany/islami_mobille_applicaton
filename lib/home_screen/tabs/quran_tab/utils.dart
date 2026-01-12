@@ -19,3 +19,14 @@ void setMostRecently(int index) async {
   }
   prefs.setStringList(SharedPreferencesKeys.mostRecentlyKey, mostRecentlyList);
 }
+
+void setAyaNo(int number, String suraName) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setInt(suraName, number);
+}
+
+Future<int> getAyaNo(String suraName) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  int number = prefs.getInt(suraName) ?? -1;
+  return number;
+}
