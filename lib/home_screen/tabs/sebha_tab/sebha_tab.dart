@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/core/utils/app_assets.dart';
 import 'package:islami/core/utils/app_styles.dart';
 import 'package:islami/core/utils/device_dimensions.dart';
+import 'package:islami/home_screen/tabs/sebha_tab/widgets/tasbeeh_text.dart';
 
 class SebhaTab extends StatefulWidget {
   SebhaTab({super.key});
@@ -42,26 +43,7 @@ class _SebhaTabState extends State<SebhaTab> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Column(
-                spacing: 16,
-                children: [
-                  SizedBox(
-                    height: context.height * 0.09,
-                  ),
-                  Text(
-                    "$sobhanAllah",
-                    style: AppStyles.white36Bold,
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "$count",
-                    style: AppStyles.white36Bold,
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
+              TasbeehText(tasbeeh: sobhanAllah, count: count),
               Column(
                 children: [
                   Image.asset(AppAssets.sebhaHeadImage),

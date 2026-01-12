@@ -78,9 +78,12 @@ class _SuraDetailsState extends State<SuraDetails> {
                   ? SizedBox()
                   : Expanded(
                 child:
-                selectedTabIndex == 1
-                    ? AyaListLayout(ayaList: ayaList)
-                    : MushafLayout(suraContent: suraContent),
+                selectedTabIndex == 1 AyaListLayout(
+                              ayaList: ayaList,
+                              suraName:
+                                  QuranNameVerses.englishQuranSurahsList[index],
+                            )
+                            : MushafLayout(suraContent: suraContent),
               ),
               SizedBox(height: context.height * 0.114),
             ],

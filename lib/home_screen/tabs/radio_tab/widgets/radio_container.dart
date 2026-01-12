@@ -35,7 +35,14 @@ class _RadioContainerState extends State<RadioContainer> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Image.asset(AppAssets.radioItemMosque, fit: BoxFit.fill),
+            child:
+                isPause
+                    ? SvgPicture.asset(
+                      AppAssets.soundWaveIcon,
+                      fit: BoxFit.fill,
+                      color: Colors.black,
+                    )
+                    : Image.asset(AppAssets.radioItemMosque, fit: BoxFit.fill),
           ),
           Positioned(
             left: 0,
