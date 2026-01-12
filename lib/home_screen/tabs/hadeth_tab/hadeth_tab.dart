@@ -12,20 +12,27 @@ class HadethTab extends StatefulWidget {
 
 class _HadethTabState extends State<HadethTab> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(height: context.height * 0.695,
+      options: CarouselOptions(
+        height: context.height * 0.695,
         aspectRatio: 313 / 618,
         enlargeCenterPage: true,
       ),
-      items: List.generate(50, (index) => index + 1).map((index) {
-        return Builder(
-          builder: (BuildContext context) {
-            return HadeethContainer(index: index,);
-          },
-        );
-      }).toList(),
+      items:
+          List.generate(50, (index) => index + 1).map((index) {
+            return Builder(
+              builder: (BuildContext context) {
+                return HadeethContainer(index: index);
+              },
+            );
+          }).toList(),
     );
   }
-
 }

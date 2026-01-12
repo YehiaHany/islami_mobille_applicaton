@@ -39,7 +39,11 @@ class AppAssets {
   static const radioItemMosque = "$_baseUrl/radio_item_mosque.png";
   static const volumeIcon = "$_baseUrl/volume.svg";
   static const muteIcon = "$_baseUrl/mute.svg";
+  static const volumeSlashIcon = "$_baseUrl/volume_slash.svg";
   static const pauseIcon = "$_baseUrl/pause.svg";
   static const playIcon = "$_baseUrl/play.svg";
   static const soundWaveIcon = "$_baseUrl/sound_wave.svg";
+  static const morningAzkarIcon = "$_baseUrl/morning_azkar.png";
+  static const eveningAzkarIcon = "$_baseUrl/evening_azkar.png";
+  static const azanTimeDesign = "$_baseUrl/azan_time_design.png";
 }
