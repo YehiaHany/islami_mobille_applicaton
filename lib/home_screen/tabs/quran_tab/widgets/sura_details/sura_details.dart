@@ -78,7 +78,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                   ? SizedBox()
                   : Expanded(
                 child:
-                selectedTabIndex == 1 AyaListLayout(
+                selectedTabIndex == 1 ? AyaListLayout(
                               ayaList: ayaList,
                               suraName:
                                   QuranNameVerses.englishQuranSurahsList[index],
